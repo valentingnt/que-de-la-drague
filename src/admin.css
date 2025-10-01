@@ -1,0 +1,231 @@
+.admin-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: var(--color-secondary);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin-title {
+  font-family: var(--font-crayonize);
+  font-size: 36px;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.admin-login {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-secondary);
+  border-radius: var(--border-radius-organic);
+}
+
+.admin-login .admin-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-button {
+  font-family: var(--font-providence);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: var(--border-width) solid var(--color-primary-dark);
+  border-radius: var(--border-radius-button);
+  cursor: pointer;
+  transition: var(--transition-opacity);
+}
+
+.admin-button:hover {
+  opacity: 0.9;
+}
+
+.admin-button-secondary {
+  background: var(--color-secondary);
+  border-color: #4a1c3d;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-secondary);
+  border-radius: var(--border-radius-organic);
+  padding: 30px;
+  text-align: center;
+}
+
+.stat-value {
+  font-family: var(--font-crayonize);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-family: var(--font-providence);
+  font-size: 16px;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.heatmap-section,
+.submissions-section {
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-secondary);
+  border-radius: var(--border-radius-organic);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-family: var(--font-crayonize);
+  font-size: 24px;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.heatmap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.heatmap-bar-container {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+}
+
+.heatmap-hour {
+  font-family: var(--font-providence);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-align: right;
+}
+
+.heatmap-bar-wrapper {
+  background: #f0f0f0;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.heatmap-bar {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  transition: width 0.3s ease;
+}
+
+.heatmap-count {
+  font-family: var(--font-providence);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.submissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-providence);
+}
+
+.submissions-table th {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: 12px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid var(--color-secondary);
+}
+
+.submissions-table td {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  color: var(--color-secondary);
+}
+
+.submissions-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.message-cell {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.loading {
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 24px;
+  color: var(--color-secondary);
+  font-family: var(--font-providence);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-title {
+    font-size: 28px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heatmap-bar-container {
+    grid-template-columns: 30px 1fr 30px;
+    gap: 5px;
+  }
+
+  .submissions-table {
+    font-size: 12px;
+  }
+
+  .submissions-table th,
+  .submissions-table td {
+    padding: 8px;
+  }
+}

@@ -4,12 +4,25 @@ Site web de soutien pour le projet de BD féministe et engagé de Lisa Launey & 
 
 ## 📋 Description
 
-Ce site permet aux supporters de laisser un message de soutien qui sera inclus à la fin de la BD. Les visiteurs peuvent :
+Ce site permet aux supporters de laisser un message de soutien qui sera inclus à la fin de la BD.
 
-- Lire la description du projet
-- Télécharger le PDF du projet
-- Laisser un message personnalisé avec leur nom
-- Les messages sont enregistrés dans une base de données Supabase
+### Fonctionnalités Publiques
+
+- ✅ Lire la description du projet
+- ✅ Télécharger le PDF du projet
+- ✅ Laisser un message personnalisé avec nom/prénom
+- ✅ Compteur social (affiché à partir de 20 messages)
+- ✅ Page de confirmation après soumission
+- ✅ Messages enregistrés dans Supabase
+
+### Fonctionnalités Admin
+
+- ✅ Dashboard privé avec authentification
+- ✅ Table de toutes les submissions
+- ✅ Statistiques (total, moyenne de caractères, etc.)
+- ✅ Heatmap par heure de soumission
+- ✅ Export CSV des données
+- ✅ Système de backup automatique
 
 ## 🚀 Installation
 
@@ -48,7 +61,21 @@ Ce site permet aux supporters de laisser un message de soutien qui sera inclus �
    - Settings → API → Project URL
    - Settings → API → Project API keys → anon/public
 
-3. **Remplacer le logo (optionnel)**
+3. **Configurer l'Admin**
+
+   a. Créez un compte admin dans Supabase :
+
+   - Allez dans Authentication → Users
+   - Cliquez sur "Add user" → "Create new user"
+   - Entrez un email et mot de passe
+
+   b. Accédez au dashboard admin via : `https://votre-site.com/admin/login`
+
+4. **Configurer le système de backup** (optionnel)
+
+   Voir le fichier `BACKUP_SETUP.md` pour les instructions détaillées.
+
+5. **Remplacer le logo (optionnel)**
 
    Remplacez le fichier `public/logo.svg` par votre propre logo.
 
@@ -77,7 +104,7 @@ Ce site permet aux supporters de laisser un message de soutien qui sera inclus �
    }
    ```
 
-4. **Mettre à jour le lien PDF**
+6. **Mettre à jour le lien PDF**
 
    Dans `src/App.jsx`, remplacez l'URL du placeholder :
 

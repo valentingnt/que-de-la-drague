@@ -1,12 +1,33 @@
-import { useState } from 'react'
-import { supabase } from './supabaseClient'
-import './App.css'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { supabase } from '../supabaseClient'
+import '../App.css'
 
-function App() {
+function Home() {
+  const navigate = useNavigate()
   const [message, setMessage] = useState('')
   const [signature, setSignature] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
+  const [submissionCount, setSubmissionCount] = useState(0)
+
+  useEffect(() => {
+    fetchSubmissionCount()
+  }, [])
+
+  const fetchSubmissionCount = async () => {
+    try {
+      const { count, error } = await supabase
+        .from('submissions')
+        .select('*', { count: 'exact', head: true })
+
+      if (!error && count !== null) {
+        setSubmissionCount(count)
+      }
+    } catch (error) {
+      console.error('Error fetching count:', error)
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,9 +54,7 @@ function App() {
 
       if (error) throw error
 
-      setSubmitStatus({ type: 'success', text: 'Merci pour ton soutien ! 💜' })
-      setMessage('')
-      setSignature('')
+      navigate('/merci')
     } catch (error) {
       console.error('Error submitting:', error)
       setSubmitStatus({ type: 'error', text: 'Une erreur est survenue. Réessaye plus tard.' })
@@ -61,10 +80,16 @@ function App() {
             Soutiens un projet féministe et engagé en laissant un petit mot avec ton nom et prénom !
             <br />
             <br />
-            <span className="description-footer">(Tu pourras le retrouver à la fin de la BD)</span>
+            <span className="description-footer">(Tu pourras peut-être le retrouver à la fin de la BD)</span>
           </p>
           <img src="/logo.png" alt="Logo" className="shoes-logo" width={100} height={100} />
         </div>
+
+        {submissionCount >= 20 && (
+          <div className="social-proof">
+            <span className="social-proof-count">{submissionCount}</span> personnes ont déjà laissé leur soutien ! 💜
+          </div>
+        )}
 
         <button className="pdf-button" onClick={handlePDFClick}>
           Voir le projet
@@ -135,4 +160,5 @@ function App() {
   )
 }
 
-export default App
+export default Home
+
