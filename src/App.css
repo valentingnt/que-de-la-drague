@@ -36,6 +36,7 @@
   --spacing-xl: 25px;
   --spacing-2xl: 30px;
   --spacing-3xl: 40px;
+  --spacing-4xl: 50px;
 
   /* Border */
   --border-width: 4px;
@@ -412,13 +413,18 @@ body {
   }
 
   .title {
-    font-size: var(--font-size-title-mobile);
+    font-size: 8vw;
   }
 
   .shoes-logo {
-    top: -55px;
-    left: -25px;
-    width: 60px;
+    top: -85px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .description-container {
+    margin-top: 75px;
   }
 
   .description {
