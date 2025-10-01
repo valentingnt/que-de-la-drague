@@ -22,7 +22,6 @@ Ce site permet aux supporters de laisser un message de soutien qui sera inclus �
 - ✅ Statistiques (total, moyenne de caractères, etc.)
 - ✅ Heatmap par heure de soumission
 - ✅ Export CSV des données
-- ✅ Système de backup automatique
 
 ## 🚀 Installation
 
@@ -71,11 +70,7 @@ Ce site permet aux supporters de laisser un message de soutien qui sera inclus �
 
    b. Accédez au dashboard admin via : `https://votre-site.com/admin/login`
 
-4. **Configurer le système de backup** (optionnel)
-
-   Voir le fichier `BACKUP_SETUP.md` pour les instructions détaillées.
-
-5. **Remplacer le logo (optionnel)**
+4. **Remplacer le logo (optionnel)**
 
    Remplacez le fichier `public/logo.svg` par votre propre logo.
 
@@ -104,7 +99,7 @@ Ce site permet aux supporters de laisser un message de soutien qui sera inclus �
    }
    ```
 
-6. **Mettre à jour le lien PDF**
+5. **Mettre à jour le lien PDF**
 
    Dans `src/App.jsx`, remplacez l'URL du placeholder :
 

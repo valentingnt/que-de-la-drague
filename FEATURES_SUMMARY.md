@@ -73,30 +73,6 @@ Bouton d'export unique qui génère :
   - User Agent
 - Compatible Excel, Google Sheets, Numbers
 
-## 💾 Système de Backup
-
-### Edge Function Supabase
-
-Fichier : `supabase/functions/backup-submissions/index.ts`
-
-**Fonctionnalités** :
-
-- Export automatique en JSON
-- Sauvegarde dans Supabase Storage (bucket `backups`)
-- Format : `backup_submissions_YYYY-MM-DD.json`
-- Inclut métadonnées (date, nombre total)
-- Peut être automatisé via cron job ou GitHub Actions
-
-**Structure du backup** :
-
-```json
-{
-  "created_at": "2025-01-01T02:00:00.000Z",
-  "total_submissions": 150,
-  "data": [...]
-}
-```
-
 ## 🎨 Améliorations UX
 
 ### Page Publique
@@ -124,10 +100,7 @@ npm install
 # 3. Créer un utilisateur admin dans Supabase
 # Authentication → Users → Add user
 
-# 4. (Optionnel) Déployer le backup
-npx supabase functions deploy backup-submissions
-
-# 5. Lancer le dev server
+# 4. Lancer le dev server
 npm run dev
 ```
 
@@ -144,7 +117,6 @@ npm run dev
 
 - `README.md` - Guide d'installation général
 - `ADMIN_GUIDE.md` - Guide d'utilisation du dashboard
-- `BACKUP_SETUP.md` - Configuration du système de backup
 - `FEATURES_SUMMARY.md` - Ce fichier
 
 ## 💡 Tips
