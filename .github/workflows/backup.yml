@@ -11,4 +11,4 @@ jobs:
       - name: Trigger Backup
         run: |
           curl -X POST https://pdygxdmtdmzxcaaacfmf.supabase.co/functions/v1/backup-submissions \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
+            -H "Authorization: Bearer ${{ secrets.VITE_SUPABASE_ANON_KEY }}"
