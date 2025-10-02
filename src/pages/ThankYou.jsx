@@ -7,7 +7,8 @@ function ThankYou() {
   return (
     <div className="container">
       <div className="thank-you-container">
-        <h1 className="thank-you-title">Merci pour ton soutien ! 💜</h1>
+        {/* <h1 className="thank-you-title">Merci pour ton soutien ! 💜</h1> */}
+        <img src="/thanks.png" alt="Merci" className="thanks-logo" width={600} />
 
         <p className="thank-you-message">
           Ton message a bien été enregistré et apparaîtra à la fin de la BD !

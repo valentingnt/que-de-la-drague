@@ -193,7 +193,6 @@ body {
 
 .thank-you-container {
   text-align: center;
-  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,6 +208,12 @@ body {
   line-height: 1.2;
 }
 
+.thanks-logo {
+  width: 100%;
+  aspect-ratio: 1200/676;
+  object-fit: contain;
+}
+
 .thank-you-message {
   font-family: var(--font-providence);
   font-size: var(--font-size-large);
@@ -216,6 +221,7 @@ body {
   max-width: 600px;
   line-height: 1.6;
   font-weight: 700;
+  text-wrap: balance;
 }
 
 .thank-you-actions {
