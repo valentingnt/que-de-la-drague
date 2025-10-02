@@ -10,7 +10,7 @@ function ThankYou() {
         <h1 className="thank-you-title">Merci pour ton soutien ! 💜</h1>
 
         <p className="thank-you-message">
-          Ton message a bien été enregistré et apparaîtra peut-être à la fin de la BD !
+          Ton message a bien été enregistré et apparaîtra à la fin de la BD !
         </p>
 
         <div className="thank-you-actions">

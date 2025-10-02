@@ -77,10 +77,7 @@ function Home() {
       <main className="main-content">
         <div className="description-container">
           <p className="description">
-            Soutiens un projet féministe et engagé en laissant un petit mot avec ton nom et prénom !
-            <br />
-            <br />
-            <span className="description-footer">(Tu pourras peut-être le retrouver à la fin de la BD)</span>
+            Soutiens un projet BD féministe et engagé en laissant un petit mot avec ton nom et prénom
           </p>
           <img src="/logo.png" alt="Logo" className="shoes-logo" width={100} height={100} />
         </div>
