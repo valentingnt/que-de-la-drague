@@ -113,11 +113,11 @@ function AdminDashboard() {
       <header className="admin-header">
         <h1 className="admin-title">Dashboard</h1>
         <div className="admin-actions">
+          <button className="admin-text-link" onClick={handleLogout}>
+            Déconnexion
+          </button>
           <button className="admin-button" onClick={exportToCSV}>
             📥 Exporter CSV
-          </button>
-          <button className="admin-button admin-button-secondary" onClick={handleLogout}>
-            Déconnexion
           </button>
         </div>
       </header>

@@ -1,10 +1,10 @@
 :root {
   /* Colors */
-  --color-primary: #2f5aa2;
+  --color-primary: #35589c;
   --color-primary-dark: #1a3d6d;
   --color-secondary: #602750;
   --color-background: #d8bbe4;
-  --color-white: white;
+  --color-white: #fffffe;
   --color-success: #28a745;
   --color-success-bg: #d4edda;
   --color-error: #dc3545;
@@ -44,6 +44,13 @@
   --border-radius-organic-alt: 225px 15px 255px 15px/15px 255px 15px 225px;
   --border-radius-button: 255px 25px 225px 25px/25px 225px 25px 255px;
   --border-radius-button-alt: 225px 25px 255px 25px/25px 255px 25px 225px;
+
+  /* Border Image */
+  --border-image-source: url("/sketch-background.png");
+  --border-image-source-button: url("/sketch-background-button.png");
+  --border-image-slice: 40;
+  --border-image-width: 15px;
+  --border-image-repeat: stretch;
 
   /* Transitions */
   --transition-opacity: opacity 0.2s;
@@ -160,9 +167,13 @@ body {
   margin-bottom: var(--spacing-2xl);
   text-align: center;
   background: var(--color-white);
+  background-clip: padding-box;
   padding: var(--spacing-lg) var(--spacing-xl);
-  border: var(--border-width) solid var(--color-secondary);
-  border-radius: var(--border-radius-organic);
+  border-style: solid;
+  border-width: var(--border-image-width);
+  border-image-source: var(--border-image-source);
+  border-image-slice: var(--border-image-slice);
+  border-image-repeat: var(--border-image-repeat);
   position: relative;
   font-weight: 700;
   text-transform: uppercase;
@@ -235,19 +246,31 @@ body {
   font-weight: 700;
   color: var(--color-white);
   background: var(--color-primary);
-  border: var(--border-width) solid var(--color-primary-dark);
-  border-radius: var(--border-radius-button);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: var(--border-image-width);
+  border-image-source: var(--border-image-source-button);
+  border-image-slice: var(--border-image-slice);
+  border-image-repeat: var(--border-image-repeat);
   cursor: pointer;
-  transition: var(--transition-opacity);
+  transition: transform 0.15s ease-out, filter 0.15s ease-out;
   margin-bottom: var(--spacing-3xl);
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-block;
   align-self: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 .pdf-button:hover {
-  opacity: 0.9;
+  filter: brightness(1.05);
+}
+
+.pdf-button:active {
+  filter: brightness(0.95);
 }
 
 .form {
@@ -275,31 +298,26 @@ body {
 .form-group textarea {
   padding: 14px var(--font-size-medium);
   font-size: var(--font-size-medium);
-  border: var(--border-width) solid var(--color-secondary);
+  border-style: solid;
+  border-width: var(--border-image-width);
+  border-image-source: var(--border-image-source);
+  border-image-slice: var(--border-image-slice);
+  border-image-repeat: var(--border-image-repeat);
   font-family: inherit;
-  transition: var(--transition-border);
   background: var(--color-white);
+  background-clip: padding-box;
   color: var(--color-secondary);
 }
 
-.form-group input {
-  border-radius: var(--border-radius-organic-alt);
-}
-
-.form-group input:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
+  filter: brightness(0.98);
 }
 
 .form-group textarea {
   resize: vertical;
   min-height: 140px;
-  border-radius: var(--border-radius-organic);
-}
-
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
 }
 
 .form-group input:disabled,
@@ -338,8 +356,13 @@ body {
 
 .status-message.error {
   background-color: var(--color-error-bg);
+  background-clip: padding-box;
   color: var(--color-secondary);
-  border: var(--border-width) solid var(--color-error);
+  border-style: solid;
+  border-width: var(--border-image-width);
+  border-image-source: var(--border-image-source);
+  border-image-slice: var(--border-image-slice);
+  border-image-repeat: var(--border-image-repeat);
 }
 
 .submit-button {
@@ -349,19 +372,31 @@ body {
   font-weight: 700;
   color: var(--color-white);
   background: var(--color-primary);
-  border: var(--border-width) solid var(--color-primary-dark);
-  border-radius: var(--border-radius-button-alt);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: var(--border-image-width);
+  border-image-source: var(--border-image-source-button);
+  border-image-slice: var(--border-image-slice);
+  border-image-repeat: var(--border-image-repeat);
   cursor: pointer;
-  transition: var(--transition-opacity);
+  transition: transform 0.15s ease-out, filter 0.15s ease-out;
   margin-top: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-block;
   align-self: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 .submit-button:hover:not(:disabled) {
-  opacity: 0.9;
+  filter: brightness(1.05);
+}
+
+.submit-button:active:not(:disabled) {
+  filter: brightness(0.95);
 }
 
 .submit-button:disabled {
