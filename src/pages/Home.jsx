@@ -29,6 +29,17 @@ function Home() {
     }
   }
 
+  const getClientIP = async () => {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json')
+      const data = await response.json()
+      return data.ip
+    } catch (error) {
+      console.error('Error fetching IP:', error)
+      return null
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -41,6 +52,9 @@ function Home() {
     setSubmitStatus(null)
 
     try {
+      // Get client IP address
+      const clientIP = await getClientIP()
+
       const { error } = await supabase
         .from('submissions')
         .insert([
@@ -48,7 +62,8 @@ function Home() {
             message: message.trim(),
             signature: signature.trim(),
             user_agent: navigator.userAgent,
-            referrer: document.referrer || null
+            referrer: document.referrer || null,
+            ip_address: clientIP
           }
         ])
 
