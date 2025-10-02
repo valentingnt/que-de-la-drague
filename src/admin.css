@@ -162,7 +162,7 @@
 .submissions-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: var(--font-providence);
+  font-family: Inter, sans-serif;
 }
 
 .submissions-table th {
@@ -187,7 +187,7 @@
 }
 
 .message-cell {
-  max-width: 400px;
+  min-width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
 }

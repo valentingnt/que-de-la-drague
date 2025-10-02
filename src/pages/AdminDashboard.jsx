@@ -111,7 +111,7 @@ function AdminDashboard() {
   return (
     <div className="admin-container">
       <header className="admin-header">
-        <h1 className="admin-title">Dashboard Admin</h1>
+        <h1 className="admin-title">Dashboard</h1>
         <div className="admin-actions">
           <button className="admin-button" onClick={exportToCSV}>
             📥 Exporter CSV
