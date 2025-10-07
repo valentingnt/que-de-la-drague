@@ -263,6 +263,7 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   will-change: transform;
+  text-decoration: none;
 }
 
 .pdf-button:hover {
