@@ -99,7 +99,7 @@ function Home() {
           </div>
         )}
 
-        <a className="pdf-button" href="https://drive.google.com/file/d/16NlL8Vin-9qrl-TEvbIsus6nkvzXJKKK/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <a className="pdf-button" href="https://pdygxdmtdmzxcaaacfmf.supabase.co/storage/v1/object/public/pdf/que-de-la-drague-vraiment-dossier-de-presse.pdf" target="_blank" rel="noopener noreferrer">
           Voir le projet
         </a>
 
