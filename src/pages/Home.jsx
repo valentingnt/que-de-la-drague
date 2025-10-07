@@ -78,10 +78,6 @@ function Home() {
     }
   }
 
-  const handlePDFClick = () => {
-    window.open('https://example.com/placeholder.pdf', '_blank')
-  }
-
   return (
     <div className="container">
       <header className="header">
@@ -103,9 +99,9 @@ function Home() {
           </div>
         )}
 
-        <button className="pdf-button" onClick={handlePDFClick}>
+        <a className="pdf-button" href="https://drive.google.com/file/d/16NlL8Vin-9qrl-TEvbIsus6nkvzXJKKK/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
           Voir le projet
-        </button>
+        </a>
 
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
