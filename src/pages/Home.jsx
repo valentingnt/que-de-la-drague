@@ -52,9 +52,6 @@ function Home() {
     setSubmitStatus(null)
 
     try {
-      // Get client IP address
-      const clientIP = await getClientIP()
-
       const { error } = await supabase
         .from('submissions')
         .insert([
@@ -63,11 +60,24 @@ function Home() {
             signature: signature.trim(),
             user_agent: navigator.userAgent,
             referrer: document.referrer || null,
-            ip_address: clientIP
+            ip_address: null
           }
         ])
 
       if (error) throw error
+
+      getClientIP().then(clientIP => {
+        if (clientIP) {
+          supabase
+            .from('submissions')
+            .update({ ip_address: clientIP })
+            .eq('message', message.trim())
+            .eq('signature', signature.trim())
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .then(() => { })
+        }
+      })
 
       navigate('/merci')
     } catch (error) {

@@ -71,6 +71,7 @@
   src: url("/src/assets/fonts/crayonize-regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -78,6 +79,7 @@
   src: url("/src/assets/fonts/crayonize-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -85,6 +87,7 @@
   src: url("/src/assets/fonts/providence-sans-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
